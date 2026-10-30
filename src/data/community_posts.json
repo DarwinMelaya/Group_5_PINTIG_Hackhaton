@@ -1,0 +1,254 @@
+[
+  {
+    "id": "30000000-0000-4000-8000-000000000001",
+    "author_id": "40000000-0000-4000-8000-000000000001",
+    "listing_id": "10000000-0000-4000-8000-000000000001",
+    "parent_id": null,
+    "post_type": "social",
+    "body": "A little inspiration for your next slow journey: Boac Cathedral. Leave only footprints, support local guides, and confirm visitor information before heading out.",
+    "rating": null,
+    "media_urls": ["/landscape-1.svg"],
+    "sentiment_label": "Neutral",
+    "moderation_status": "published",
+    "municipality": "Boac",
+    "category": null,
+    "feedback_status": null,
+    "created_at": "2026-10-28T08:00:00Z",
+    "profiles": {
+      "display_name": "Maya \u00b7 Demo traveler",
+      "avatar_url": null
+    },
+    "fictional": true
+  },
+  {
+    "id": "30000000-0000-4000-8000-000000000002",
+    "author_id": "40000000-0000-4000-8000-000000000002",
+    "listing_id": "10000000-0000-4000-8000-000000000002",
+    "parent_id": null,
+    "post_type": "social",
+    "body": "The best part of exploring Mogpog? Taking time to listen to local stories. What would you add to a thoughtful itinerary?",
+    "rating": null,
+    "media_urls": [],
+    "sentiment_label": "Neutral",
+    "moderation_status": "published",
+    "municipality": "Mogpog",
+    "category": null,
+    "feedback_status": null,
+    "created_at": "2026-10-28T07:00:00Z",
+    "profiles": {
+      "display_name": "Carlo \u00b7 Demo traveler",
+      "avatar_url": null
+    },
+    "fictional": true
+  },
+  {
+    "id": "30000000-0000-4000-8000-000000000003",
+    "author_id": "40000000-0000-4000-8000-000000000003",
+    "listing_id": "10000000-0000-4000-8000-000000000003",
+    "parent_id": null,
+    "post_type": "social",
+    "body": "A little inspiration for your next slow journey: Tres Reyes Islands. Leave only footprints, support local guides, and confirm visitor information before heading out.",
+    "rating": null,
+    "media_urls": ["/landscape-3.svg"],
+    "sentiment_label": "Neutral",
+    "moderation_status": "published",
+    "municipality": "Gasan",
+    "category": null,
+    "feedback_status": null,
+    "created_at": "2026-10-27T06:00:00Z",
+    "profiles": {
+      "display_name": "Isla \u00b7 Demo traveler",
+      "avatar_url": null
+    },
+    "fictional": true
+  },
+  {
+    "id": "30000000-0000-4000-8000-000000000004",
+    "author_id": "40000000-0000-4000-8000-000000000001",
+    "listing_id": "10000000-0000-4000-8000-000000000004",
+    "parent_id": null,
+    "post_type": "social",
+    "body": "The best part of exploring Buenavista? Taking time to listen to local stories. What would you add to a thoughtful itinerary?",
+    "rating": null,
+    "media_urls": ["/landscape-4.svg"],
+    "sentiment_label": "Neutral",
+    "moderation_status": "published",
+    "municipality": "Buenavista",
+    "category": null,
+    "feedback_status": null,
+    "created_at": "2026-10-27T08:00:00Z",
+    "profiles": {
+      "display_name": "Maya \u00b7 Demo traveler",
+      "avatar_url": null
+    },
+    "fictional": true
+  },
+  {
+    "id": "30000000-0000-4000-8000-000000000005",
+    "author_id": "40000000-0000-4000-8000-000000000002",
+    "listing_id": "10000000-0000-4000-8000-000000000005",
+    "parent_id": null,
+    "post_type": "social",
+    "body": "A little inspiration for your next slow journey: Maniwaya Island. Leave only footprints, support local guides, and confirm visitor information before heading out.",
+    "rating": null,
+    "media_urls": [],
+    "sentiment_label": "Neutral",
+    "moderation_status": "published",
+    "municipality": "Santa Cruz",
+    "category": null,
+    "feedback_status": null,
+    "created_at": "2026-10-26T07:00:00Z",
+    "profiles": {
+      "display_name": "Carlo \u00b7 Demo traveler",
+      "avatar_url": null
+    },
+    "fictional": true
+  },
+  {
+    "id": "30000000-0000-4000-8000-000000000006",
+    "author_id": "40000000-0000-4000-8000-000000000003",
+    "listing_id": "10000000-0000-4000-8000-000000000006",
+    "parent_id": null,
+    "post_type": "social",
+    "body": "The best part of exploring Torrijos? Taking time to listen to local stories. What would you add to a thoughtful itinerary?",
+    "rating": null,
+    "media_urls": ["/landscape-6.svg"],
+    "sentiment_label": "Neutral",
+    "moderation_status": "published",
+    "municipality": "Torrijos",
+    "category": null,
+    "feedback_status": null,
+    "created_at": "2026-10-26T06:00:00Z",
+    "profiles": {
+      "display_name": "Isla \u00b7 Demo traveler",
+      "avatar_url": null
+    },
+    "fictional": true
+  },
+  {
+    "id": "30000000-0000-4000-8000-000000000007",
+    "author_id": "40000000-0000-4000-8000-000000000001",
+    "listing_id": "10000000-0000-4000-8000-000000000001",
+    "parent_id": null,
+    "post_type": "social",
+    "body": "A little inspiration for your next slow journey: Boac Cathedral. Leave only footprints, support local guides, and confirm visitor information before heading out.",
+    "rating": null,
+    "media_urls": ["/landscape-1.svg"],
+    "sentiment_label": "Neutral",
+    "moderation_status": "published",
+    "municipality": "Boac",
+    "category": null,
+    "feedback_status": null,
+    "created_at": "2026-10-25T08:00:00Z",
+    "profiles": {
+      "display_name": "Maya \u00b7 Demo traveler",
+      "avatar_url": null
+    },
+    "fictional": true
+  },
+  {
+    "id": "30000000-0000-4000-8000-000000000008",
+    "author_id": "40000000-0000-4000-8000-000000000002",
+    "listing_id": "10000000-0000-4000-8000-000000000002",
+    "parent_id": null,
+    "post_type": "social",
+    "body": "The best part of exploring Mogpog? Taking time to listen to local stories. What would you add to a thoughtful itinerary?",
+    "rating": null,
+    "media_urls": [],
+    "sentiment_label": "Neutral",
+    "moderation_status": "published",
+    "municipality": "Mogpog",
+    "category": null,
+    "feedback_status": null,
+    "created_at": "2026-10-25T07:00:00Z",
+    "profiles": {
+      "display_name": "Carlo \u00b7 Demo traveler",
+      "avatar_url": null
+    },
+    "fictional": true
+  },
+  {
+    "id": "30000000-0000-4000-8000-000000000009",
+    "author_id": "40000000-0000-4000-8000-000000000003",
+    "listing_id": "10000000-0000-4000-8000-000000000003",
+    "parent_id": null,
+    "post_type": "social",
+    "body": "A little inspiration for your next slow journey: Tres Reyes Islands. Leave only footprints, support local guides, and confirm visitor information before heading out.",
+    "rating": null,
+    "media_urls": ["/landscape-3.svg"],
+    "sentiment_label": "Neutral",
+    "moderation_status": "published",
+    "municipality": "Gasan",
+    "category": null,
+    "feedback_status": null,
+    "created_at": "2026-10-24T06:00:00Z",
+    "profiles": {
+      "display_name": "Isla \u00b7 Demo traveler",
+      "avatar_url": null
+    },
+    "fictional": true
+  },
+  {
+    "id": "30000000-0000-4000-8000-000000000010",
+    "author_id": "40000000-0000-4000-8000-000000000001",
+    "listing_id": "10000000-0000-4000-8000-000000000004",
+    "parent_id": null,
+    "post_type": "social",
+    "body": "The best part of exploring Buenavista? Taking time to listen to local stories. What would you add to a thoughtful itinerary?",
+    "rating": null,
+    "media_urls": ["/landscape-4.svg"],
+    "sentiment_label": "Neutral",
+    "moderation_status": "published",
+    "municipality": "Buenavista",
+    "category": null,
+    "feedback_status": null,
+    "created_at": "2026-10-24T08:00:00Z",
+    "profiles": {
+      "display_name": "Maya \u00b7 Demo traveler",
+      "avatar_url": null
+    },
+    "fictional": true
+  },
+  {
+    "id": "30000000-0000-4000-8000-000000000011",
+    "author_id": "40000000-0000-4000-8000-000000000002",
+    "listing_id": "10000000-0000-4000-8000-000000000005",
+    "parent_id": null,
+    "post_type": "social",
+    "body": "A little inspiration for your next slow journey: Maniwaya Island. Leave only footprints, support local guides, and confirm visitor information before heading out.",
+    "rating": null,
+    "media_urls": [],
+    "sentiment_label": "Neutral",
+    "moderation_status": "published",
+    "municipality": "Santa Cruz",
+    "category": null,
+    "feedback_status": null,
+    "created_at": "2026-10-23T07:00:00Z",
+    "profiles": {
+      "display_name": "Carlo \u00b7 Demo traveler",
+      "avatar_url": null
+    },
+    "fictional": true
+  },
+  {
+    "id": "30000000-0000-4000-8000-000000000012",
+    "author_id": "40000000-0000-4000-8000-000000000003",
+    "listing_id": "10000000-0000-4000-8000-000000000006",
+    "parent_id": null,
+    "post_type": "social",
+    "body": "The best part of exploring Torrijos? Taking time to listen to local stories. What would you add to a thoughtful itinerary?",
+    "rating": null,
+    "media_urls": ["/landscape-6.svg"],
+    "sentiment_label": "Neutral",
+    "moderation_status": "published",
+    "municipality": "Torrijos",
+    "category": null,
+    "feedback_status": null,
+    "created_at": "2026-10-23T06:00:00Z",
+    "profiles": {
+      "display_name": "Isla \u00b7 Demo traveler",
+      "avatar_url": null
+    },
+    "fictional": true
+  }
+]

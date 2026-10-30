@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">DALUYAN</string>
+    <string name="title_activity_main">DALUYAN</string>
+    <string name="package_name">com.daluyan.app</string>
+    <string name="custom_url_scheme">com.daluyan.app</string>
+</resources>

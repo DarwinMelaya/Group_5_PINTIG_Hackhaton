@@ -1,0 +1,22 @@
+[
+  {
+    "question": "Are ferry schedules official?",
+    "answer": "DALUYAN does not publish live ferry departures. Scenarios are DEMO / SIMULATED. Confirm actual schedules with your operator.",
+    "source": "https://www.pagasa.dost.gov.ph/"
+  },
+  {
+    "question": "Are entrance fees verified?",
+    "answer": "Missing fees are not verified. Confirm with the operator before travel.",
+    "source": "https://marinduque.gov.ph/"
+  },
+  {
+    "question": "Where are official weather warnings?",
+    "answer": "Open-Meteo forecasts are third-party forecasts. PAGASA publishes official weather advisories.",
+    "source": "https://www.pagasa.dost.gov.ph/"
+  },
+  {
+    "question": "What does accreditation mean?",
+    "answer": "DALUYAN cannot issue DOT accreditation. Only authoritative evidence can establish official DOT accreditation.",
+    "source": "https://accreditation.tourism.gov.ph/"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Ordinary travel",
+    "baselineDemand": 80,
+    "seasonalMultiplier": 1,
+    "extraVisitors": 0,
+    "assumedCapacity": 150,
+    "availableServiceFraction": 1
+  },
+  {
+    "name": "Lenten tourism surge",
+    "baselineDemand": 80,
+    "seasonalMultiplier": 2.4,
+    "extraVisitors": 40,
+    "assumedCapacity": 150,
+    "availableServiceFraction": 1
+  },
+  {
+    "name": "Ferry disruption",
+    "baselineDemand": 80,
+    "seasonalMultiplier": 1.3,
+    "extraVisitors": 20,
+    "assumedCapacity": 150,
+    "availableServiceFraction": 0.4
+  }
+]

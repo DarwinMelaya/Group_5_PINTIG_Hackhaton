@@ -4,7 +4,7 @@
 
 A responsive React tourism application with the six official modules: HOME, MAP, TOURISM AND CULTURE HUB, NOTIFICATIONS, RINI, and SETTINGS. Includes Supabase integration, SQL security policies, deterministic intelligence, and an MFA-protected administrator interface.
 
-**Current status:** buildable development implementation with locally tested guest workflows and PostgreSQL permissions. It is **not a fully accepted or deployed platform**. No Supabase project credentials or Cloudflare deployment are configured. Without Supabase the application explicitly runs a read-only public preview: it never pretends to authenticate or persist community actions. See [implementation status](docs/IMPLEMENTATION_STATUS.md) and [test evidence](docs/TEST_RESULTS.md).
+**Current status:** buildable development implementation with Supabase-backed authentication, persistent community actions, and PostgreSQL permissions. Configure the public Supabase URL and publishable browser key before running the application; the app does not provide a local or read-only preview fallback. See [implementation status](docs/IMPLEMENTATION_STATUS.md) and [test evidence](docs/TEST_RESULTS.md).
 
 ## Develop
 
@@ -20,12 +20,19 @@ Each cloud task is already isolated. Use this checkout; do not create a worktree
 
 ## Connect a free Supabase project
 
-1. Create or select a Supabase free-tier project. Execute `supabase/migrations/202610290001_initial.sql` once in its SQL editor. Then execute `supabase/seed.sql`. The seed is repeatable and preserves existing IDs. Alternatively use the Supabase CLI with your own project configuration. Never run these against an unrelated database.
-2. Set `VITE_SUPABASE_URL` and **only** the public anon/publishable browser key (`VITE_SUPABASE_ANON_KEY`) in a gitignored `.env.local` or injected development environment. `.env.example` contains names only. Restart Vite after changing them. Never put service-role keys, database passwords, Google client secrets or CAPTCHA secrets in `VITE_` variables.
-3. In Supabase Auth enable email/password with **Confirm email**. Set the site URL and allow development and deployed `/auth` callback URLs, including `/auth?mode=recovery`. Configure SMTP/email delivery as needed within free limits. Confirm delivery with real test accounts. Registration, password recovery and OAuth are unusable until the provider configuration works.
+1. Create or select a Supabase free-tier project. Execute `supabase/migrations/202610290001_initial.sql`, `supabase/migrations/202610300001_registration_onboarding.sql`, and `supabase/migrations/202610300002_add_profile_avatar_columns.sql` in its SQL editor. If the initial schema is already installed, apply the two later migrations. Then execute `supabase/seed.sql`. The seed is repeatable and preserves existing IDs. Alternatively use the Supabase CLI with your own project configuration. Never run these against an unrelated database.
+2. Set `VITE_SUPABASE_URL` and **only** the public publishable browser key (`VITE_SUPABASE_PUBLISHABLE_KEY`; the legacy `VITE_SUPABASE_ANON_KEY` is also supported) in a gitignored `.env.local` or injected development environment. `.env.example` contains names only. Restart Vite after changing them. Never put service-role keys, database passwords, Google client secrets or CAPTCHA secrets in `VITE_` variables.
+3. In Supabase Auth enable email/password and turn **Confirm email** off if registration should create a session and log the user in immediately without an invitation or verification email. Set the site URL and allow development and deployed `/auth` callback URLs, including `/auth?mode=recovery`. For Google login, enable the Google provider and add its callback URL. The `new_profile` database trigger automatically creates the DALUYAN profile and tourist role for every email or OAuth user.
 4. Enable TOTP in Auth → MFA. Ordinary users without an enrolled factor can use email/password. Enrolled users must challenge their authenticator before private operations; administrators require AAL2 for all privileged reads/writes. The app supports QR enrollment, initial verification, factor status, challenge, cancellation and authenticated factor removal. Test on real authenticator devices; do not share enrollment QR images.
-5. Optional Google login: configure the Google provider and its callback in Supabase, with a free Google OAuth web client. The app's Google action uses Supabase OAuth and reports provider errors. No Google secret belongs in this repository.
-6. For server-verified anti-bot protection, configure Cloudflare Turnstile in **Supabase Auth → Bot and abuse protection** (site key and secret in their designated dashboards). Set the public `VITE_TURNSTILE_SITE_KEY`. Supabase verifies `captchaToken`; a frontend token alone is not treated as proof. Configure Auth rate limits. Database triggers independently throttle posts, listing requests, interactions and reports. Public storage requires further abuse monitoring for production.
+5. Optional Google login: configure the Google provider and its callback in Supabase, with a free Google OAuth web client. The app's Google action uses Supabase OAuth and reports provider errors; after the first successful callback, the database trigger automatically creates the DALUYAN account. No Google secret belongs in this repository.
+6. Deploy RINI's Edge Function and configure its server-only Gemini secret:
+
+```bash
+supabase functions deploy rini-chat
+supabase secrets set GEMINI_API_KEY=<your-gemini-api-key>
+```
+
+Never put `GEMINI_API_KEY` in `.env.local` or any `VITE_` variable. The function requires a signed-in Supabase user, reads published listings and consented preferences, and writes each exchange to `rini_conversations` and `rini_messages` under RLS. For server-verified anti-bot protection, configure Cloudflare Turnstile in **Supabase Auth → Bot and abuse protection** (site key and secret in their designated dashboards). Set the public `VITE_TURNSTILE_SITE_KEY`. Supabase verifies `captchaToken`; a frontend token alone is not treated as proof. Configure Auth rate limits. Database triggers independently throttle posts, listing requests, interactions and reports. Public storage requires further abuse monitoring for production.
 7. Buckets and policies are created by the migration: `post-media` and `avatars` are public; `feedback-evidence` is private. Never make feedback evidence public. The migration adds activity events to the Supabase Realtime publication if present. Enable Realtime for that table if your project manages publications separately.
 8. Register a real account first. Through the **trusted SQL editor only**, authorize the intended administrator by exact account ID:
 
@@ -54,7 +61,7 @@ The Playwright config uses `/usr/bin/chromium`, which exists in this cloud image
 
 ## Deploy on Cloudflare Pages (free tier)
 
-Connect this GitHub repository to a Pages project. Set the root directory to the repository root, build command `npm run build`, output `dist`, and Node version `24`. Set public `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, and optional Turnstile site key as build variables. These values are embedded at build time; rebuild after changing them. `_redirects` preserves client routes. `wrangler.toml` also supports a Pages deployment with your authorized Cloudflare account.
+Connect this GitHub repository to a Pages project. Set the root directory to the repository root, build command `npm run build`, output `dist`, and Node version `24`. Set public `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY` (or legacy `VITE_SUPABASE_ANON_KEY`), and optional Turnstile site key as build variables. These values are embedded at build time; rebuild after changing them. `_redirects` preserves client routes. `wrangler.toml` also supports a Pages deployment with your authorized Cloudflare account.
 
 After deploying, add the actual HTTPS URL to Supabase Auth callbacks, open a deep link directly, verify mobile navigation on the deployed site, and run the two-tourist feedback/notification/admin workflow. No production URL or QR code is supplied here because deployment has not occurred. Do not generate a demo QR code pointing to an unverified or placeholder URL.
 
